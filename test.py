@@ -32,7 +32,7 @@ def main():
     parser.add_argument('--alpha', '-a', type=float, default=1,
                         help='alpha control the fusion degree in Adain')
     parser.add_argument('--gpu', '-g', type=int, default=0,
-                        help='GPU ID(nagative value indicate CPU)')
+                        help='GPU ID(negative value indicate CPU)')
     parser.add_argument('--model_state_path', type=str, default='model_state.pth',
                         help='save directory for result and loss')
 

@@ -1,9 +1,3 @@
-import warnings
-warnings.simplefilter("ignore", UserWarning)
-import os
-import argparse
-import matplotlib as mpl
-mpl.use('Agg')
 import matplotlib.pyplot as plt
 from tqdm import tqdm
 import torch
@@ -12,6 +6,14 @@ from torch.utils.data import DataLoader
 from torchvision.utils import save_image
 from dataset import PreprocessDataset, denorm
 from model import Model
+import warnings
+import os
+import argparse
+import matplotlib as mpl
+mpl.use('Agg')
+warnings.simplefilter("ignore", UserWarning)
+
+
 
 
 def main():
@@ -21,7 +23,7 @@ def main():
     parser.add_argument('--epoch', '-e', type=int, default=20,
                         help='Number of sweeps over the dataset to train')
     parser.add_argument('--gpu', '-g', type=int, default=0,
-                        help='GPU ID(nagative value indicate CPU)')
+                        help='GPU ID(negative value indicate CPU)')
     parser.add_argument('--learning_rate', '-lr', type=int, default=5e-5,
                         help='learning rate for Adam')
     parser.add_argument('--snapshot_interval', type=int, default=1000,
